@@ -4,7 +4,8 @@ services:
     ports:
       - "4000:4000"
     env_file:
-      - ../auth-app/.env
+      - ../auth-app/env/dev.env
+      - ../auth-app/env/prod.env
     depends_on:
       - db
 
@@ -13,7 +14,8 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - ../api-app/.env
+      - ../auth-app/env/dev.env
+      - ../auth-app/env/prod.env
     depends_on:
       - db
       - auth-app
